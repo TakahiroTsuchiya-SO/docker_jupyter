@@ -1,6 +1,6 @@
 version: '3'
 services:
-  jupyterlab-ds:
+  jupyterlab:
     build: .
     volumes:
       - "./data:/home/work"
