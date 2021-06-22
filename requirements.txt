@@ -1,8 +1,11 @@
+# 必要なライブラリを適宜記述
+# バージョンは次のように指定
+# numpy==1.18.5
+
 numpy
 # pandas
 # matplotlib
 # seaborn
 # scikit-learn
-# lightgbm
 # xgboost
 # keras

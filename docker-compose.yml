@@ -1,10 +1,11 @@
 version: '3'
 services:
   jupyterlab:
+    container_name: jupyterlab
     build: .
     volumes:
-      - "./data:/home/work"
-      - ".jupyter:/root/.jupyter"
+      - "./data:/home/work"             # データのマウント
+      - ".jupyter:/root/.jupyter"       # extension関係のマウント
     ports:
       - "8888:8888"
     command:
@@ -14,3 +15,4 @@ services:
           --allow-root
           --no-browser
           --NotebookApp.token=''
+    restart: always
