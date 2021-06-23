@@ -27,13 +27,13 @@ docker-compose down --rmi all
 ```
 
 ### ライブラリのインストール
-requirements.txtに追記する
-*既にコンテナを立ち上げてる場合はcell内でインストールしたあと、requirements.txtにも追記する
+- requirements.txtに追記する
+- 既にコンテナを立ち上げてる場合は、cell内でインストールしたあとrequirements.txtにも追記する
 ```
 !pip install numpy
 ```
 
 ### その他
-jupyter labの設定ファイルは/.jupyter/lab配下にある各ファイル
-このファイルをいじることでjupyter labの設定を変更できる
-GUIでも設定は変更できるが、コンテナを再生成したら変更は反映されない
+- jupyter labの設定ファイルは/.jupyter/lab配下にある各ファイル
+- このファイルをいじることでjupyter labの設定を変更できる
+- コンテナ生成後であればGUIでも設定は変更可能
