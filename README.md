@@ -33,6 +33,15 @@ docker-compose down --rmi all
 !pip install numpy
 ```
 
+### slimをつかってイメージを軽くする
+- そのままコンテナを立ち上げると、生成するためのimageがでかくなる(1GB以上)
+- Pythonのベースimageをslimにすることで約半分に減らすことができる
+
+(デメリット)
+- slimを使うとjupyter labでnodeが認識されなくなり、node由来のextensionが使えなくなる
+- alpineについては下記記事参照
+https://qiita.com/skokado/items/89d30b99a164f9a29970
+
 ### その他
 - jupyter labの設定ファイルは/.jupyter/lab配下にある各ファイル
 - このファイルをいじることでjupyter labの設定を変更できる
