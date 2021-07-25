@@ -29,7 +29,6 @@ RUN pip3 install --upgrade pip && \
 # slimを使う場合は最後の2行いらない
 RUN pip3 install --upgrade --no-cache-dir \
     'jupyterlab~=3.0' \
-    yapf \
     && rm -rf ~/.cache/pip \
     && jupyter labextension install \
         @jupyterlab/toc
