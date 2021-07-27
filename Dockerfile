@@ -1,16 +1,15 @@
-FROM python:3.8
-# FROM python:3.8-slim
+FROM python:3.8-slim
 
-RUN apt-get update -y \
-    && apt-get upgrade -y
+WORKDIR /home/work/
+
+RUN apt-get update && apt-get upgrade
 
 # gitとかnodeとかのインストール
-# slimを使う場合はnpmの設定いらない(1行目は消す)
-RUN curl -sL https://deb.nodesource.com/setup_12.x |bash - \
-    && apt-get install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
     git \
     curl \
-    nodejs \
+    && curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
+    && apt-get install -y nodejs \
     && apt-get autoremove -y \
     && apt-get clean \
     && rm -rf \
@@ -26,11 +25,6 @@ RUN pip3 install --upgrade pip && \
     && rm -rf ~/.cache/pip
 
 # jupyterlabとextensionのインストール
-# slimを使う場合は最後の2行いらない
 RUN pip3 install --upgrade --no-cache-dir \
     'jupyterlab~=3.0' \
-    && rm -rf ~/.cache/pip \
-    && jupyter labextension install \
-        @jupyterlab/toc
-
-WORKDIR /home/work/
+    && rm -rf ~/.cache/pip
