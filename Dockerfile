@@ -5,7 +5,6 @@ WORKDIR /home/work/
 RUN apt-get update && apt-get upgrade
 
 # gitとかnodeとかのインストール
-# slimを使う場合はnpmの設定いらない(1行目は消す)
 RUN apt-get install -y --no-install-recommends \
     git \
     curl \
@@ -26,7 +25,6 @@ RUN pip3 install --upgrade pip && \
     && rm -rf ~/.cache/pip
 
 # jupyterlabとextensionのインストール
-# slimを使う場合は最後の2行いらない
 RUN pip3 install --upgrade --no-cache-dir \
     'jupyterlab~=3.0' \
     && rm -rf ~/.cache/pip
